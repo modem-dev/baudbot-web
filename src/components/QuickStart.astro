@@ -16,48 +16,78 @@
         Quick Start
       </h2>
       <p class="text-lg text-text-secondary max-w-2xl">
-        Get Baudbot running in under a minute. Three commands, that's it.
+        Get Baudbot running in minutes. Bootstrap, install, deploy, go.
       </p>
     </div>
 
-    <!-- Terminal block -->
-    <div class="max-w-3xl">
+    <!-- Terminal block: Install -->
+    <div class="max-w-3xl space-y-6">
       <div class="rounded-2xl border border-terminal-border bg-terminal-bg overflow-hidden shadow-2xl shadow-black/40">
         <!-- Terminal chrome -->
         <div class="flex items-center gap-2 px-5 py-3 border-b border-terminal-border">
           <div class="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
           <div class="w-3 h-3 rounded-full bg-[#febc2e]"></div>
           <div class="w-3 h-3 rounded-full bg-[#28c840]"></div>
-          <span class="ml-3 text-xs text-text-muted font-mono">terminal</span>
+          <span class="ml-3 text-xs text-text-muted font-mono">terminal — install</span>
         </div>
 
         <!-- Terminal content -->
         <div class="p-6 font-mono text-sm leading-7">
-          <div class="text-text-muted mb-4"># Clone and set up Baudbot</div>
+          <div class="text-text-muted mb-4"># Bootstrap and install Baudbot</div>
           <div>
             <span class="text-accent select-none">$ </span>
-            <span class="text-text-primary">git clone https://github.com/modem-dev/baudbot</span>
+            <span class="text-text-primary">curl -fsSL https://raw.githubusercontent.com/modem-dev/baudbot/main/bootstrap.sh | bash</span>
           </div>
           <div>
             <span class="text-accent select-none">$ </span>
-            <span class="text-text-primary">cd baudbot</span>
-          </div>
-          <div>
-            <span class="text-accent select-none">$ </span>
-            <span class="text-text-primary">./install.sh</span>
+            <span class="text-text-primary">baudbot install</span>
           </div>
           <div class="mt-4 text-text-muted">
             <span class="text-green-400">✓</span> Baudbot installed successfully
           </div>
-          <div class="text-text-muted">
-            <span class="text-green-400">✓</span> Run <span class="text-accent">baudbot start</span> to begin monitoring
+        </div>
+      </div>
+
+      <!-- Terminal block: Deploy & Run -->
+      <div class="rounded-2xl border border-terminal-border bg-terminal-bg overflow-hidden shadow-2xl shadow-black/40">
+        <!-- Terminal chrome -->
+        <div class="flex items-center gap-2 px-5 py-3 border-b border-terminal-border">
+          <div class="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
+          <div class="w-3 h-3 rounded-full bg-[#febc2e]"></div>
+          <div class="w-3 h-3 rounded-full bg-[#28c840]"></div>
+          <span class="ml-3 text-xs text-text-muted font-mono">terminal — deploy</span>
+        </div>
+
+        <!-- Terminal content -->
+        <div class="p-6 font-mono text-sm leading-7">
+          <div class="text-text-muted mb-4"># Deploy latest source/config to runtime</div>
+          <div>
+            <span class="text-accent select-none">$ </span>
+            <span class="text-text-primary">sudo baudbot deploy</span>
+          </div>
+          <div class="mt-2 text-text-muted mb-4"># Start the service</div>
+          <div>
+            <span class="text-accent select-none">$ </span>
+            <span class="text-text-primary">sudo baudbot start</span>
+          </div>
+          <div class="mt-2 text-text-muted mb-4"># Check health</div>
+          <div>
+            <span class="text-accent select-none">$ </span>
+            <span class="text-text-primary">sudo baudbot status</span>
+          </div>
+          <div>
+            <span class="text-accent select-none">$ </span>
+            <span class="text-text-primary">sudo baudbot doctor</span>
+          </div>
+          <div class="mt-4 text-text-muted">
+            <span class="text-green-400">✓</span> Baudbot is running and healthy
           </div>
         </div>
       </div>
 
       <!-- Copy hint -->
       <p class="mt-4 text-sm text-text-muted">
-        Requires Node.js 22+ and Docker. See the
+        Requires a Linux server with Docker. See the
         <a
           href="https://github.com/modem-dev/baudbot#readme"
           target="_blank"
