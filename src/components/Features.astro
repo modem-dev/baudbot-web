@@ -1,0 +1,75 @@
+---
+const features = [
+  {
+    emoji: "🔍",
+    title: "Sentry Monitoring",
+    description: "Watches for errors in real-time, triages alerts by severity, and investigates stack traces to pinpoint root causes."
+  },
+  {
+    emoji: "🔧",
+    title: "Automated Fixes",
+    description: "Writes code fixes, runs tests, and opens pull requests automatically — no human needed in the loop."
+  },
+  {
+    emoji: "💬",
+    title: "Slack Integration",
+    description: "Talk to it in Slack, assign tasks in threads, and get real-time updates as it works through issues."
+  },
+  {
+    emoji: "📧",
+    title: "Email Interface",
+    description: "Send tasks via email, get structured results back. Perfect for async workflows and external triggers."
+  },
+  {
+    emoji: "🧠",
+    title: "Persistent Memory",
+    description: "Learns your codebase over time, remembers past incidents, and gets smarter with every fix it ships."
+  },
+  {
+    emoji: "⚡",
+    title: "Multi-Agent",
+    description: "Spawns specialized sub-agents for parallel work — investigate, fix, and ship multiple issues simultaneously."
+  }
+];
+---
+
+<section id="features" class="relative py-32">
+  <!-- Section border -->
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border-subtle to-transparent"></div>
+
+  <div class="mx-auto max-w-6xl px-6">
+    <!-- Section header -->
+    <div class="mb-16">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-accent font-mono font-bold text-lg">⟩</span>
+        <span class="text-sm font-semibold text-accent uppercase tracking-widest">Capabilities</span>
+      </div>
+      <h2 class="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
+        What It Does
+      </h2>
+      <p class="text-lg text-text-secondary max-w-2xl">
+        A fully autonomous DevOps agent that monitors, diagnoses, fixes, and ships — while you sleep.
+      </p>
+    </div>
+
+    <!-- Feature grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {features.map((feature) => (
+        <div class="group relative rounded-2xl border border-border-subtle bg-bg-card p-7 hover:bg-bg-card-hover hover:border-accent/20 transition-all duration-300">
+          <!-- Hover glow -->
+          <div class="absolute inset-0 rounded-2xl bg-accent/[0.02] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+          <div class="relative">
+            <div class="text-3xl mb-4">{feature.emoji}</div>
+            <h3 class="text-lg font-semibold mb-2 text-text-primary">
+              {feature.title}
+            </h3>
+            <p class="text-sm text-text-secondary leading-relaxed">
+              {feature.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
