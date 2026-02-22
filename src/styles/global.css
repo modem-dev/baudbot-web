@@ -20,23 +20,23 @@
   --gray-950: #050505;
 
   /* Teal palette */
-  --teal-50: #defcf6;
-  --teal-100: #caf5ec;
-  --teal-200: #9fe4d5;
-  --teal-300: #75d1bd;
-  --teal-400: #44bda3;
-  --teal-500: #079d7d;
-  --teal-600: #1e7965;
-  --teal-700: #105344;
-  --teal-800: #053027;
+  --color-teal-50: #defcf6;
+  --color-teal-100: #caf5ec;
+  --color-teal-200: #9fe4d5;
+  --color-teal-300: #75d1bd;
+  --color-teal-400: #44bda3;
+  --color-teal-500: #079d7d;
+  --color-teal-600: #1e7965;
+  --color-teal-700: #105344;
+  --color-teal-800: #053027;
 
   /* Design tokens mapped to modem palette */
   --color-bg-primary: var(--gray-850);
   --color-bg-card: var(--gray-900);
   --color-bg-card-hover: var(--gray-800);
   --color-border-subtle: var(--gray-750);
-  --color-accent: var(--teal-500);
-  --color-accent-dim: var(--teal-700);
+  --color-accent: var(--color-teal-500);
+  --color-accent-dim: var(--color-teal-700);
   --color-text-primary: var(--gray-200);
   --color-text-secondary: var(--gray-500);
   --color-text-muted: var(--gray-600);
