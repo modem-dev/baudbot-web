@@ -16,7 +16,7 @@
         Two ways to run it
       </h2>
       <p class="text-lg text-text-secondary max-w-2xl">
-        Managed gets you running in minutes. Self-hosted gives you full control. Either way, Baudbot runs on Linux and your code stays on your server.
+        Managed gets you running in minutes. Bring your own server for full control. Either way, Baudbot runs on Linux and your code stays on your infrastructure.
       </p>
     </div>
 
@@ -76,9 +76,9 @@
       <div class="relative rounded-2xl border border-border-subtle bg-bg-card p-8 flex flex-col">
         <div class="mb-6">
           <div class="text-3xl mb-4">🐧</div>
-          <h3 class="text-2xl font-bold text-text-primary mb-3">Self-Hosted</h3>
+          <h3 class="text-2xl font-bold text-text-primary mb-3">Bring Your Own</h3>
           <p class="text-text-secondary leading-relaxed">
-            Run the install script on any Linux server you own. You wire up Slack yourself — directly, or optionally via the open-source broker if you don't want to expose a public endpoint.
+            Run the install script on any Linux server you own. Use our Slack broker for easy workspace installation and reliable message delivery, or wire Slack up directly.
           </p>
         </div>
 
@@ -96,8 +96,8 @@
             <span>MIT-licensed — fork it, extend it, run it forever without asking permission</span>
           </li>
           <li class="flex items-start gap-3 text-sm text-text-secondary">
-            <span class="text-accent mt-0.5 shrink-0">→</span>
-            <span>Slack setup is on you (or use the broker to avoid opening a public port)</span>
+            <span class="text-green-400 mt-0.5 shrink-0">✓</span>
+            <span>Use our Slack message broker for easy workspace installation &amp; better message reliability</span>
           </li>
         </ul>
 
@@ -120,7 +120,7 @@
       <div>
         <p class="text-sm text-text-secondary leading-relaxed">
           <span class="text-text-primary font-semibold">About the Slack broker:</span>
-          {" "}Slack requires a public HTTPS endpoint to deliver events, but your server doesn't need to be publicly reachable. The broker (a Cloudflare Worker) receives events from Slack, queues them durably, and Baudbot pulls them over outbound HTTPS on its own schedule. If your server restarts or is briefly offline, messages wait in the queue and get delivered when it comes back — nothing is dropped. Messages are end-to-end encrypted; the broker cannot read them. The managed path sets this up automatically. Self-hosters can deploy their own broker or wire Slack directly to their server.
+          {" "}Slack requires a public HTTPS endpoint to deliver events, but your server doesn't need to be publicly reachable. The broker (a Cloudflare Worker) receives events from Slack, queues them durably, and Baudbot pulls them over outbound HTTPS on its own schedule. If your server restarts or is briefly offline, messages wait in the queue and get delivered when it comes back — nothing is dropped. Messages are end-to-end encrypted; the broker cannot read them. The managed path sets this up automatically. Bring-your-own users can deploy their own broker or wire Slack directly to their server.
         </p>
       </div>
     </div>
