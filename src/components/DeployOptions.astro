@@ -47,7 +47,7 @@
           </li>
           <li class="flex items-start gap-3 text-sm text-text-secondary">
             <span class="text-green-400 mt-0.5 shrink-0">✓</span>
-            <span>Slack integration set up for you via the broker — no need to expose your server to the internet</span>
+            <span>Slack integration set up via the broker — no public port needed, messages queue durably so nothing is missed if your server restarts</span>
           </li>
           <li class="flex items-start gap-3 text-sm text-text-secondary">
             <span class="text-green-400 mt-0.5 shrink-0">✓</span>
@@ -120,7 +120,7 @@
       <div>
         <p class="text-sm text-text-secondary leading-relaxed">
           <span class="text-text-primary font-semibold">About the Slack broker:</span>
-          {" "}Slack requires a public HTTPS endpoint to deliver events. Our open-source broker (a Cloudflare Worker) handles that for you — Baudbot polls it over outbound HTTPS instead of opening an inbound port. Messages are end-to-end encrypted; the broker never sees your message content. The managed path sets this up automatically. Self-hosters can deploy their own broker or skip it and point Slack directly at their server.
+          {" "}Slack requires a public HTTPS endpoint to deliver events, but your server doesn't need to be publicly reachable. The broker (a Cloudflare Worker) receives events from Slack, queues them durably, and Baudbot pulls them over outbound HTTPS on its own schedule. If your server restarts or is briefly offline, messages wait in the queue and get delivered when it comes back — nothing is dropped. Messages are end-to-end encrypted; the broker cannot read them. The managed path sets this up automatically. Self-hosters can deploy their own broker or wire Slack directly to their server.
         </p>
       </div>
     </div>
