@@ -1,18 +1,55 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-primary: #050810;
-  --color-bg-card: #0d1117;
-  --color-bg-card-hover: #161b22;
-  --color-border-subtle: #1b2230;
-  --color-accent: #22d3ee;
-  --color-accent-dim: #0e7490;
-  --color-text-primary: #e6edf3;
-  --color-text-secondary: #8b949e;
-  --color-text-muted: #484f58;
-  --color-terminal-bg: #0a0e17;
-  --color-terminal-border: #1b2230;
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  /* Modem warm gray palette */
+  --gray-50: #fbfaf9;
+  --gray-100: #f6f5f4;
+  --gray-150: #f1f1ee;
+  --gray-200: #eae9e6;
+  --gray-250: #e3e1de;
+  --gray-300: #d7d6d0;
+  --gray-400: #c4c1bb;
+  --gray-500: #b0ada6;
+  --gray-600: #6c6860;
+  --gray-650: #524f47;
+  --gray-700: #424038;
+  --gray-750: #302e27;
+  --gray-800: #272520;
+  --gray-850: #191815;
+  --gray-900: #11100e;
+  --gray-950: #050505;
+
+  /* Teal palette */
+  --teal-50: #defcf6;
+  --teal-100: #caf5ec;
+  --teal-200: #9fe4d5;
+  --teal-300: #75d1bd;
+  --teal-400: #44bda3;
+  --teal-500: #079d7d;
+  --teal-600: #1e7965;
+  --teal-700: #105344;
+  --teal-800: #053027;
+
+  /* Design tokens mapped to modem palette */
+  --color-bg-primary: var(--gray-850);
+  --color-bg-card: var(--gray-900);
+  --color-bg-card-hover: var(--gray-800);
+  --color-border-subtle: var(--gray-750);
+  --color-accent: var(--teal-500);
+  --color-accent-dim: var(--teal-700);
+  --color-text-primary: var(--gray-200);
+  --color-text-secondary: var(--gray-500);
+  --color-text-muted: var(--gray-600);
+  --color-terminal-bg: var(--gray-900);
+  --color-terminal-border: var(--gray-750);
+
+  /* Button/control shadows */
+  --control-inner-highlight: rgba(255, 255, 255, 0.07);
+  --control-inner-shadow: rgba(0, 0, 0, 0.15);
+  --control-outer-shadow: rgba(0, 0, 0, 0.7);
+
+  /* Fonts - Unit primary, Inter fallback, JetBrains Mono for code */
+  --font-sans: "Unit", "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
 }
 

@@ -40,7 +40,7 @@ const steps = [
       </p>
     </div>
 
-    <!-- Steps -->
+    <!-- Steps with modem styling -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {steps.map((step, index) => (
         <div class="relative">
@@ -49,10 +49,10 @@ const steps = [
             <div class="hidden md:block absolute top-12 left-full w-full h-px bg-gradient-to-r from-accent/30 to-transparent -translate-x-8 z-0"></div>
           )}
 
-          <div class="relative rounded-2xl border border-border-subtle bg-bg-card p-8 h-full">
+          <div class="relative rounded-[3px] border border-border-subtle bg-bg-card p-8 h-full">
             <!-- Step number -->
             <div class="flex items-center gap-4 mb-6">
-              <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10 text-accent border border-accent/20">
+              <div class="flex items-center justify-center w-12 h-12 rounded-[3px] bg-accent/10 text-accent border border-accent/20">
                 <Fragment set:html={step.icon} />
               </div>
               <span class="text-sm font-mono font-bold text-accent">{step.number}</span>
