@@ -117,7 +117,7 @@
       <div>
         <p class="text-sm text-text-secondary leading-relaxed">
           <span class="text-text-primary font-semibold">About the Slack broker:</span>
-          {" "}Slack requires a public HTTPS endpoint to deliver events, but your server doesn't need to be publicly reachable. The broker (a Cloudflare Worker) receives events from Slack, queues them durably, and Baudbot pulls them over outbound HTTPS on its own schedule. If your server restarts or is briefly offline, messages wait in the queue and get delivered when it comes back — nothing is dropped. Messages are end-to-end encrypted; the broker cannot read them. The managed path sets this up automatically. Bring-your-own users can deploy their own broker or wire Slack directly to their server.
+          {" "}Slack requires a public HTTPS endpoint to deliver events, but your server doesn't need to be publicly reachable. The broker (a Cloudflare Worker) receives events from Slack, queues them durably, and Baudbot pulls them over outbound HTTPS on its own schedule. If your server restarts or is briefly offline, messages wait in the queue and get delivered when it comes back — nothing is dropped. Messages are end-to-end encrypted; the broker cannot read them. Both paths can use the broker. Managed sets it up automatically. Bring-your-own users can connect to it with a single command, or wire Slack directly to their server if they prefer.
         </p>
       </div>
     </div>
