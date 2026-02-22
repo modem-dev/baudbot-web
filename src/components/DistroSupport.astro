@@ -1,0 +1,162 @@
+---
+const distros = [
+  {
+    name: "Omarchy",
+    status: "supported",
+    description: "Fully supported with native packages"
+  },
+  {
+    name: "Arch Linux",
+    status: "supported", 
+    description: "Available in AUR and through direct install"
+  },
+  {
+    name: "Ubuntu",
+    status: "supported",
+    description: "LTS and latest versions fully supported"
+  },
+  {
+    name: "Debian",
+    status: "coming-soon",
+    description: "Official packages coming soon"
+  }
+];
+
+// SVG logos for each distro
+const logos = {
+  "Omarchy": `<svg viewBox="0 0 100 100" class="w-12 h-12">
+    <defs>
+      <linearGradient id="omarchy-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#0e7490;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <circle cx="50" cy="50" r="45" fill="none" stroke="url(#omarchy-grad)" stroke-width="3"/>
+    <polygon points="50,20 35,45 65,45" fill="url(#omarchy-grad)"/>
+    <polygon points="35,55 50,80 65,55" fill="url(#omarchy-grad)"/>
+    <circle cx="50" cy="50" r="8" fill="url(#omarchy-grad)"/>
+  </svg>`,
+  
+  "Arch Linux": `<svg viewBox="0 0 100 100" class="w-12 h-12">
+    <defs>
+      <linearGradient id="arch-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#0e7490;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <path d="M50 15 C40 25, 35 35, 35 45 C35 60, 42 75, 50 85 C58 75, 65 60, 65 45 C65 35, 60 25, 50 15 Z" fill="url(#arch-grad)"/>
+    <path d="M50 25 C47 30, 45 35, 45 40 C45 50, 47 60, 50 65 C53 60, 55 50, 55 40 C55 35, 53 30, 50 25 Z" fill="none" stroke="#050810" stroke-width="2"/>
+  </svg>`,
+  
+  "Ubuntu": `<svg viewBox="0 0 100 100" class="w-12 h-12">
+    <defs>
+      <linearGradient id="ubuntu-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#0e7490;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <circle cx="50" cy="50" r="40" fill="none" stroke="url(#ubuntu-grad)" stroke-width="3"/>
+    <circle cx="50" cy="25" r="8" fill="url(#ubuntu-grad)"/>
+    <circle cx="25" cy="65" r="8" fill="url(#ubuntu-grad)"/>
+    <circle cx="75" cy="65" r="8" fill="url(#ubuntu-grad)"/>
+    <circle cx="50" cy="50" r="12" fill="none" stroke="url(#ubuntu-grad)" stroke-width="3"/>
+  </svg>`,
+  
+  "Debian": `<svg viewBox="0 0 100 100" class="w-12 h-12">
+    <defs>
+      <linearGradient id="debian-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#8b949e;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#484f58;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <path d="M30 50 Q50 20, 70 50 Q50 80, 30 50 Z" fill="url(#debian-grad)"/>
+    <circle cx="45" cy="45" r="3" fill="#050810"/>
+    <path d="M55 40 Q60 50, 55 60" fill="none" stroke="#050810" stroke-width="2"/>
+  </svg>`
+};
+---
+
+<section id="distro-support" class="relative py-32">
+  <!-- Section border -->
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border-subtle to-transparent"></div>
+
+  <div class="mx-auto max-w-6xl px-6">
+    <!-- Section header -->
+    <div class="mb-16">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-accent font-mono font-bold text-lg">⟩</span>
+        <span class="text-sm font-semibold text-accent uppercase tracking-widest">Compatibility</span>
+      </div>
+      <h2 class="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
+        Works on your favorite distros
+      </h2>
+      <p class="text-lg text-text-secondary max-w-2xl">
+        Baudbot runs natively on major Linux distributions. Choose the distro your team knows best — Baudbot adapts to your environment, not the other way around.
+      </p>
+    </div>
+
+    <!-- Distro grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {distros.map((distro) => (
+        <div class={`group relative rounded-2xl border p-6 text-center transition-all duration-300 ${
+          distro.status === 'supported' 
+            ? 'border-border-subtle bg-bg-card hover:bg-bg-card-hover hover:border-accent/20' 
+            : 'border-border-subtle bg-bg-card/50 opacity-70'
+        }`}>
+          
+          {/* Hover glow for supported distros */}
+          {distro.status === 'supported' && (
+            <div class="absolute inset-0 rounded-2xl bg-accent/[0.02] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          )}
+
+          <div class="relative">
+            <!-- Logo -->
+            <div class="flex justify-center mb-4">
+              <Fragment set:html={logos[distro.name]} />
+            </div>
+
+            <!-- Name -->
+            <h3 class={`text-lg font-semibold mb-2 ${
+              distro.status === 'supported' ? 'text-text-primary' : 'text-text-muted'
+            }`}>
+              {distro.name}
+            </h3>
+
+            <!-- Status badge or description -->
+            {distro.status === 'coming-soon' ? (
+              <div class="mb-3">
+                <span class="inline-flex items-center rounded-full bg-text-muted/10 border border-text-muted/20 px-3 py-1 text-xs font-semibold text-text-muted uppercase tracking-wider">
+                  Coming Soon
+                </span>
+              </div>
+            ) : (
+              <div class="mb-3">
+                <span class="inline-flex items-center rounded-full bg-accent/10 border border-accent/20 px-3 py-1 text-xs font-semibold text-accent uppercase tracking-wider">
+                  Supported
+                </span>
+              </div>
+            )}
+
+            <!-- Description -->
+            <p class={`text-sm leading-relaxed ${
+              distro.status === 'supported' ? 'text-text-secondary' : 'text-text-muted'
+            }`}>
+              {distro.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Additional note -->
+    <div class="mt-8 rounded-xl border border-border-subtle bg-bg-card/50 px-6 py-5 flex items-start gap-4">
+      <div class="text-accent font-mono font-bold text-lg shrink-0 mt-0.5">⟩</div>
+      <div>
+        <p class="text-sm text-text-secondary leading-relaxed">
+          <span class="text-text-primary font-semibold">Don't see your distro?</span>
+          {" "}Baudbot is built with standard Linux tools and should run on most distributions. We're actively adding official support for more distros — reach out if you'd like to help test on yours.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
